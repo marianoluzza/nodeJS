@@ -1,19 +1,19 @@
 const Product = require("../model/product");
 
 exports.get = (req, res) => {
-    var lista = {
-        products: [],
-    };
-    res.status(200).send(lista);
+    Product.find({}, (err, data) => {
+        if(err) res.status(500).send({mensaje: "Error al recuperar productos"});
+        if(!data) res.status(404).send({mensaje: "No existen productos"});
+        res.status(200).send(data);
+    });
 };
 
 exports.getById = (req, res) => {
-    var item = {
-        product: {
-            id: req.params.id,
-        },
-    };
-    res.status(200).send(item);
+    let id = req.params.id;
+    Product.findById(id, (err, data) => {
+        if(err) res.status(404).send({mensaje: "El producto no existe"});
+        res.status(200).send(data);
+    });
 };
 
 exports.insert = (req, res) => {
@@ -32,12 +32,19 @@ exports.insert = (req, res) => {
 
 exports.update = (req, res) => {
     var id = req.params.id;
-    console.log("Mod producto("+id+"):", req.body);
-    res.status(200).send(req.body);
+    var nuevo = req.body;
+    Product.findByIdAndUpdate(id, nuevo, (err, data)=>{
+        if(err) res.status(500).send({mensaje: `Error al actualizar el producto: ${err}`});
+        if(!data) res.status(404).send({mensaje: "El producto no existe"});
+        res.status(200).send(data);
+    });
 };
 
 exports.delete = (req, res) => {
-    var id = req.params.id;
-    console.log("Del producto ("+id+")");
-    res.status(200).send(id);
+    let id = req.params.id;
+    Product.findByIdAndDelete(id, (err, data) => {
+        if(err) res.status(500).send({mensaje: `Error al eliminar el producto: ${err}`});
+        if(!data) res.status(404).send({mensaje: "El producto no existe"});
+        res.status(200).send(data);
+    });
 };

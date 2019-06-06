@@ -21,14 +21,15 @@ Material utilziado:
 * [w3schools.com] - Introducción a Node.js
 * [Git Guía Rápida] - una guía sencilla para comenzar con git. sin complicaciones ;)
 * [Simon Holmes] - MVC framework para Node.js.
-* [Twitter Bootstrap] - great UI boilerplate for modern web apps
-* [node.js] - evented I/O for the backend
 * [Express] - fast node.js network app framework [@tjholowaychuk]
-* [Gulp] - the streaming build system
-* [Breakdance](http://breakdance.io) - HTML to Markdown converter
-* [jQuery] - duh
+* [mongoRel] - relaciones de documentos en MongoDB y Mongoose
+* [tutorial] - Tutorial de Node.js + Mongoose + Express + JWT + Vistas + Heroku
+* [gravatar] - Avatar online
 
 
 [w3schools.com]: <https://www.w3schools.com/nodejs/default.asp>
 [Git Guía Rápida]: <https://rogerdudler.github.io/git-guide/index.es.html>
 [Simon Holmes]: <https://theholmesoffice.com/getting-ready-for-scalability-creating-an-mvc-framework-for-our-node-js-page/>
+[mongoRel]: <https://vegibit.com/mongoose-relationships-tutorial/>
+[tutorial]: <https://www.youtube.com/playlist?list=PLUdlARNXMVkk7E88zOrphPyGdS50Tadlr>
+[gravatar]: <https://es.gravatar.com/>
